@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "SideNavbar.module.scss"
+    ],
+    "names": [],
+    "file": "SideNavbar.module.css"
+}
