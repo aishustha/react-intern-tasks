@@ -60,16 +60,16 @@ function SideNavbar() {
                     }}
                 >
 
+                <div className={sidenavStyle.logoContent}>
+                    <div onClick={handleDrawerToggle} className={sidenavStyle.menuButton}>
+                       <i class="fas fa-bars"></i>
+                    </div>
+
+                    <img className={sidenavStyle.logoImg} alt="User Image" src="/images/Grepsr-Logo.png" />
+
+                </div>
 
                 <List component="nav" aria-label="sidenavbar" className={sidenavStyle.sideNavIcon}>
-                    <ListItem
-                            onClick={handleDrawerToggle} 
-                        >
-                        <ListItemIcon>
-                            <i class="fas fa-bars"></i>
-                        </ListItemIcon>
-                    </ListItem>
-
                     <ListItem
                     className={sidenavStyle.sideNavButton}
                         button

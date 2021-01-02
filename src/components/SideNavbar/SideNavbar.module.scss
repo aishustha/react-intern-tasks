@@ -31,6 +31,23 @@ Button {
     }
 }
 
+.logoContent {
+    display: flex;
+    align-items: center;
+    margin-bottom: 80px;
+    & .menuButton {
+        color: $white-color;
+        cursor: pointer;
+        padding: 20px;
+    }
+
+    & .logoImg {
+        width: 100px;
+        filter: brightness(0) invert(1);
+        padding: 20px;
+        padding-top: 25px;
+    }
+}
 
 .sideNavIcon {
     position: relative;
@@ -40,16 +57,13 @@ Button {
     & i, & svg{
         color: $white-color;
     }
-    & li {
-        cursor: pointer;
-        overflow: hidden;
-        padding: 20px;
-        margin-bottom: 80px;    
-    }
+
 
     & .sideNavButton {
         padding: 20px 18px;
         border-left: 3px solid $purple-color;
+
+
 
         &:hover, &:focus, &:active, &:visited, &:nth-last-child(5) {
             border-left: 3px solid $blue-color;
