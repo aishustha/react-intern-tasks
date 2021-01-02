@@ -21,14 +21,12 @@ import Fade from '@material-ui/core/Fade';
 import MenuIcon from '@material-ui/icons/Menu';
 import Drawer from '@material-ui/core/Drawer';
 import List from '@material-ui/core/List';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
 import ListItem from '@material-ui/core/ListItem';
-
-
+import HomeIcon from '@material-ui/icons/Home';
 import StopRoundedIcon from '@material-ui/icons/StopRounded';
 import LayersIcon from '@material-ui/icons/Layers';
-
+import InsertDriveFileIcon from '@material-ui/icons/InsertDriveFile';
+import ClickAwayListener from '@material-ui/core/ClickAwayListener';
 
 function TopNavbar() {
     const [anchorEl, setAnchorEl] = React.useState(null);
@@ -44,6 +42,10 @@ function TopNavbar() {
     const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
     };
+
+    const ClickAwayListenerHandler = () => {
+        if (mobileOpen) setMobileOpen(!mobileOpen);
+    }
   
 
 
@@ -123,7 +125,7 @@ function TopNavbar() {
                 </Toolbar>
             </AppBar>
 
-
+            <ClickAwayListener onClickAway={ClickAwayListenerHandler}>
             <Drawer
                 variant="permanent"
             
@@ -149,52 +151,38 @@ function TopNavbar() {
                     </IconButton>
                 </div>
                 
-                <List>
+                <List className={topnavStyle.sideNavIcon}>
                 {['Dashboard'].map((text) => (
                     <ListItem button key={text}>
                     <ListItemIcon><StopRoundedIcon/></ListItemIcon>
                     <ListItemText primary={text} />
                     </ListItem>
                 ))}
-                </List>
 
-        
-                <List>
                 {['Projects'].map((text) => (
                     <ListItem button key={text}>
                     <ListItemIcon><LayersIcon/></ListItemIcon>
                     <ListItemText primary={text} />
                     </ListItem>
                 ))}
-                </List>
-                <List>
-                {['Dashboard'].map((text) => (
+                
+                {['Tasks'].map((text) => (
                     <ListItem button key={text}>
-                    <ListItemIcon><StopRoundedIcon/></ListItemIcon>
+                    <ListItemIcon><HomeIcon/></ListItemIcon>
                     <ListItemText primary={text} />
                     </ListItem>
                 ))}
-                </List>
-
-                <List>
+                
                 {['Dashboard'].map((text) => (
                     <ListItem button key={text}>
-                    <ListItemIcon><StopRoundedIcon/></ListItemIcon>
-                    <ListItemText primary={text} />
-                    </ListItem>
-                ))}
-                </List>
-
-                <List>
-                {['Dashboard'].map((text) => (
-                    <ListItem button key={text}>
-                    <ListItemIcon><StopRoundedIcon/></ListItemIcon>
+                    <ListItemIcon><InsertDriveFileIcon/></ListItemIcon>
                     <ListItemText primary={text} />
                     </ListItem>
                 ))}
                 </List>
                
             </Drawer>
+            </ClickAwayListener>
         </div>
     );
 }

@@ -155,10 +155,21 @@ Button {
 }
 
 .menuButton {
+    margin-bottom: 80px !important;
     & svg{
         color: $white-color;
         margin-left: 5px;
         margin-right: 5px;
     }
+}
+
+.sideNavIcon {
+    color: $white-color;
+
+    margin-bottom: 20px !important;
+    & svg {
+        color: $white-color;
+    }
+
     
 }
