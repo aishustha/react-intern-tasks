@@ -47,14 +47,7 @@ body {
         color: $white-color !important; 
     }
 }
-.gridFlex {
-    display: flex;
-}
 
-.flexCenter {
-    display: flex;
-    align-items: center;
-}
 @mixin dot-colorful-icon {
     content: '';
     width: 8px;
@@ -105,9 +98,9 @@ body {
         @include gridDivision;
         padding: 30px;
         padding-right: 15px;
-        width: 25%;
 
         & .searchContent {
+            overflow: hidden;
             display: flex;
             align-items: center;
             margin-bottom: 15px;
@@ -233,20 +226,4 @@ body {
     }
 }
 
-
-//responsive 
-
-@media (max-width: 1199.98px) {
-    .gridDivisionLeft {
-        width: 100% !important;
-    }
-
-    .gridSpacing {
-        padding-right: 4rem;
-    }
-    
-    .gridFlex {
-        display: block;
-    }
-}
 
