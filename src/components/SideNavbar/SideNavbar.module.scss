@@ -64,8 +64,7 @@ Button {
         border-left: 3px solid $purple-color;
 
 
-
-        &:hover, &:focus, &:active, &:visited, &:nth-last-child(5) {
+        &.sideNavSelected {
             border-left: 3px solid $blue-color;
             background: rgba(0, 175, 255, 0.1);
             color: $blue-color;
@@ -73,6 +72,17 @@ Button {
 
             & svg, & i {
                 color: $blue-color;
+            }
+        }
+
+        &:hover, &:focus, &:active {
+            border-left: 3px solid $green-color;
+            background: rgba(34, 201, 147, 0.1);
+            color: $green-color;
+            transition: all 500ms ease;
+
+            & svg, & i {
+                color: $green-color;
             }
         }
   

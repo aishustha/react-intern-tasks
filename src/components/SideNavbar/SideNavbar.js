@@ -82,7 +82,7 @@ function SideNavbar() {
                         <ListItemText primary="Dashboard" />
                     </ListItem>
                     <ListItem
-                    className={sidenavStyle.sideNavButton}
+                    className={clsx(sidenavStyle.sideNavButton, sidenavStyle.sideNavSelected)}
                         button
                         selected={selectedIndex === 1}
                         onClick={(event) => handleListItemClick(event, 1)}
