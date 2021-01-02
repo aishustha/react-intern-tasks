@@ -1,0 +1,252 @@
+$black-color:#333b3f;
+$dark-black-color:#000;
+$border-color: #efefef;
+$white-color: #fff;
+$pink-color: #ec466c;
+$blue-color: #00afff;
+$yellow-color: #ffb419;
+$purple-color: #2a1e5c;
+$green-color:#22c993;
+$grey-color: #849299;
+$light-grey-color: #b1babf;
+$dark-grey-color: #4a5f6a;
+$body-tabs-bg-color: #eef6fa;
+$body-tabs-text-color: #96a5ad;
+$collapse-bg-color: #eef6fa;
+$border-radius: 0.25rem;
+$font-weight-600: 600;
+$font-size-14: 14px;
+$font-size-12: 12px;
+$font-size-10: 10px;
+
+body {
+    overflow-x: hidden;
+}
+
+  //scrollbar
+  *::-webkit-scrollbar {
+    width: 5px !important;
+    height: 5px !important;
+}
+
+*::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px #d9e1e5 !important;
+    border-radius: 10px !important;
+}
+
+*::-webkit-scrollbar-thumb {
+    background: #b7bfc3 !important;
+    border-radius: 10px !important;
+}
+
+
+[aria-expanded="true"]{
+    background-color: $blue-color !important;
+    color: $white-color !important;
+    & svg {
+        color: $white-color !important; 
+    }
+}
+.gridFlex {
+    display: flex;
+}
+
+.flexCenter {
+    display: flex;
+    align-items: center;
+}
+@mixin dot-colorful-icon {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: $pink-color;
+    position: absolute;
+    left: 0px;
+    border-radius: 50%;
+    top: 5px;
+}
+
+@mixin dot-outer-content {
+    position: relative;
+    padding-left: 15px;
+}
+.expanded {
+    min-height: 64px;
+    background-color: red;
+}
+
+@mixin gridDivision {
+    box-shadow: 0 0 13px rgba(33, 33, 33, 0.18);
+    border-radius: 0.25rem;
+}
+.gridSpacing {
+    & .collageContent {
+        overflow-y: scroll;
+        height: 550px;
+        padding-right: 15px;
+    }
+    & ul {
+        width: 100%;
+    }
+
+    & .flexSpaces {
+        align-items: center;
+        justify-content: space-between;
+        display: flex;
+    }
+    padding: {
+       top: 5.5rem;
+       left: 4.9rem;
+       right: 1.3rem;
+       bottom: 1.4rem;
+    }
+
+    & .gridDivisionLeft {
+        @include gridDivision;
+        padding: 30px;
+        padding-right: 15px;
+        width: 25%;
+
+        & .searchContent {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            border-bottom: 1px solid $border-color;
+        
+            & .searchBtn {
+                background: transparent;
+                border: transparent;
+                font-size: $font-size-12;
+                color: $grey-color;
+                cursor: pointer;
+                &:focus, &:hover {
+                    border: transparent;
+                    outline: 0;
+                }
+            }
+
+            & .searchWidth {
+                width: 100%;
+                min-width: 100%;
+                & input {
+                    border: transparent;
+                    padding: 10px;
+
+                    &:focus, &:hover {
+                        border: transparent;
+                        outline: 0;
+                    }
+
+                }
+            }
+            & input::-webkit-input-placeholder {
+                color: $light-grey-color;
+                font-size: 12px;
+            }
+        }
+        & li {
+            color: $light-grey-color;
+            padding: 10px 30px;
+            &.report-bgcolor {
+                background: $collapse-bg-color;
+                color: $black-color;
+            }
+        }
+
+        & .reportCollage {
+            padding: 0px;
+            border-radius: $border-radius;
+            border: 1px solid $border-color;
+        }
+
+        & .reportHeader {
+            border-radius: $border-radius;
+            font-size: 14px;
+        
+        }
+
+        & .reportBorder {
+            color: $grey-color;
+            font-weight: $font-weight-600;
+            border-bottom: 1px solid $border-color;
+            &:before {
+                background-color: transparent;
+            }
+        }
+        & .reportTitle {
+            font-size: $font-size-14;
+            font-weight: $font-weight-600;
+            display: flex;
+            align-items: center;
+        }
+        & .reportDate {
+            font-size: $font-size-12;
+            margin-top: 5px;
+        }
+        & .reportProgress {
+            & svg,
+            & i {
+                color: $green-color;
+            }
+        }
+        & .reportPercentage {
+            font-size: $font-size-12;
+            color: $green-color;
+        }
+
+        & .reportBgcolor {
+            background: $collapse-bg-color;
+            color: $black-color;
+        }
+        & .reportMarginL {
+            margin-left: 15px;
+        }
+        
+        & .redCircle {
+            @include dot-outer-content;
+            &:before {
+                @include dot-colorful-icon;
+                background: $pink-color;
+            }
+        }
+        & .greenCircle {
+            @include dot-outer-content;
+            &:before {
+                @include dot-colorful-icon;
+                background: $green-color;
+            }
+        }
+        & .yellowCircle {
+            @include dot-outer-content;
+            &:before {
+                @include dot-colorful-icon;
+                background: $yellow-color;
+            }
+        }
+        & .greenCircle {
+            @include dot-outer-content;
+            &:before {
+                @include dot-colorful-icon;
+                background: $green-color;
+            }
+        }
+    }
+}
+
+
+//responsive 
+
+@media (max-width: 1199.98px) {
+    .gridDivisionLeft {
+        width: 100% !important;
+    }
+
+    .gridSpacing {
+        padding-right: 4rem;
+    }
+    
+    .gridFlex {
+        display: block;
+    }
+}
+

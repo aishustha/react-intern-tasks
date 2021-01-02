@@ -1,11 +1,13 @@
-import React, { Component } from 'react';
-import TopNavbar from './components/TopNavbar/TopNavbar';
+import React from 'react';
+import SideNavbar from './components/SideNavbar/SideNavbar';
+import Accordion from './components/Accordion/Accordion';
 
 
  function App() {
    return (
      <div className="App">
-     <TopNavbar />
+        <SideNavbar />
+        <Accordion />
      </div>
    );
  }
